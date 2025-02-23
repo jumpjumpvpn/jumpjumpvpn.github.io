@@ -1,4 +1,4 @@
-# Jump Jump VPN | 2月23日20.6M/S|免费SSR/Clash/Shadowrocket/V2ray免费节点订阅分享  更新时间 2025-02-23 19:03:47
+# Jump Jump VPN | 2月23日19M/S|免费V2ray/Shadowrocket/SSR/Clash免费节点订阅分享  更新时间 2025-02-23 19:28:42
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://jumpjumpvpn.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
