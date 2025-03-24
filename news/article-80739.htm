@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://jumpjumpvpn.github.io/news/article-80739.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>JavaScript函数调用及函数上下文(this)</title>
+        <meta name="description" content="JavaScript中函数调用有如下4种方式： 1.作为一个函数直接被调用， func()。 &nbsp; &nbsp;此时，在非严格模式中函数上下文this指向全局window;在严格模式中指向un" />
+        <link rel="icon" href="/assets/website/img/surfboardgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Jump Jump VPN 订阅机场节点中文站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jumpjumpvpn.github.io/news/article-80739.htm" />
+    <meta property="og:site_name" content="Jump Jump VPN 订阅机场节点中文站" />
+    <meta property="og:title" content="JavaScript函数调用及函数上下文(this)" />
+    <meta property="og:image" content="https://jumpjumpvpn.github.io/uploads/20240806-1/6eb6b0173da1a8df9ec93ce1e3f278ef.webp" />
+        <meta property="og:release_date" content="2025-03-24T08:23:03" />
+    <meta property="og:updated_time" content="2025-03-24T08:23:03" />
+        <meta property="og:description" content="JavaScript中函数调用有如下4种方式： 1.作为一个函数直接被调用， func()。 &nbsp; &nbsp;此时，在非严格模式中函数上下文this指向全局window;在严格模式中指向un" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="JavaScript函数调用及函数上下文(this)">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+        
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/surfboardgithub/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="/assets/website/css/surfboardgithub/main.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9WTV4V4L86"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9WTV4V4L86');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body class="starter-page-page" data-page="detail">
+        <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+            <a href="/" class="logo d-flex align-items-center me-auto">
+                        <span class="sitename">Jump Jump VPN</span>
+                        </a>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                    </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+    <main class="main" style="margin-top: 6rem;">
+        <!-- Page Title -->
+        <div class="page-title" data-aos="fade">
+            <div class="container d-lg-flex justify-content-between align-items-center">
+                <h1 class="mb-2 mb-lg-0">JavaScript函数调用及函数上下文(this)</h1>
+                <nav class="breadcrumbs">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li class="current">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div><!-- End Page Title -->
+
+        <section id="features" class="features section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>JavaScript中函数调用有如下4种方式：</p> <p><strong>1.作为一个函数直接被调用， func()。</strong></p> <p>&nbsp; &nbsp;此时，在非严格模式中函数上下文this指向全局window;在严格模式中指向undefined</p> <p><strong>2.作为一个对象的方法调用，obj.func()。</strong></p> <p>&nbsp; 此时，上下文this指向这个调用它的对象obj</p> <p><strong>3.作为构造函数调用new Func()，实例化一个新的对象。</strong></p> <p>&nbsp; 此时，构造函数内部的this指向其实例化的对象。</p> <pre class="has"><code class="language-javascript">function Func(name) {    this.name = name } let obj1 = new Func('zhangshan'); let obj2 = new Func('lisi');  obj1.name  // =&gt; 'zhangshan' obj2.name  // =&gt; 'lisi'</code></pre> <p>&nbsp; <strong>当通过new关键字调用构造函数时会做如下操作：</strong></p> <p>&nbsp; &nbsp; &nbsp; 1).创建一个新的空对象。</p> <p>&nbsp; &nbsp; &nbsp; 2).该对象作为this参数传递给构造函数，从而成为构造函数的函数上下文（构造函数的作用域赋给新对象，因此构造函数中&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 的&nbsp;this指向了这个新对象）。</p> <p>&nbsp; &nbsp; &nbsp; 3).以创建的对象为上下文执行构造函数中的代码（为新对象添加属性）</p> <p>&nbsp; &nbsp; &nbsp; 4).新构造的对象作为new运算符的返回值<br /> &nbsp; &nbsp; &nbsp; &nbsp;<strong>注：</strong><br /> &nbsp; &nbsp; &nbsp; &nbsp; a:如果构造函数返回一个对象，则该对象将作为整个表达式的值返回，&nbsp;而传入构造函数的this将被丢弃。<br /> &nbsp; &nbsp; &nbsp; &nbsp; b.如果构造函数返回的是非对象类型，则忽略返回值，返回新创建的对象。<br /> &nbsp; &nbsp; &nbsp; &nbsp; c.每个函数都有一个原型对象（可以通过函数的prototype属性访问），该原型对象将被自动设置为通过该函数创建对象的原型。函数的原型可以被任意替换，已经构建的实例引用旧的原型,重新定义函数原型对已经构建的实例没有影响。</p> <pre class="has"><code class="language-javascript">//new 操作过程可以用如下代码来表示  let obj = new Object(); Constructor = [].shift.call(arguments); obj.__proto__ = Constructor.prototype; let ret = Contructor.apply(obj, arguments); return typeof ret === 'object' ? ret : obj</code></pre> <pre class="has"><code class="language-javascript">function Func(name) {    this.name = name    return 1 }  let obj = new Func('zhangshan'); obj  // =&gt; 忽略构造函数中返回值1 还是返回对象 { name: 'zhangshan'};  function Func(name) {    this.name = name    return {      name: 'wang2'    } }  let obj2 = new Func('lisi); obj2 // =&gt; { name: 'wang2'} </code></pre> <p>4.通过函数的apply或者call方法——func.apply(obj)或者func.call(obj)。</p> <pre class="has"><code class="language-javascript">let obj1 = {   name: 'zhangshan' } let obj2 = {   name: 'lisi' }  function func(age) {   console.log(`${this.name} age ${age}`) }  func.call(obj1, 22) // =&gt; zhangshan age 22 func.call(obj2, 26) // =&gt; lisi age 26  //call, apply第一个参数是函数的上下文this //如果第一个参数是null，在非严格模式下this指向window, 严格模式下指向null //apply和call的用法是一样的除了call传递的参数必须一个一个列出来，apply是以数组形式传递参数 </code></pre> <p>在JavaScript中this的值会根据函数的调用方式不同而不同，有时候会使程序中this出现与预期不一致的情况。<br /> 决解方式有两种：使用es6的箭头函数 和 通过bind绑定上下文</p> <pre class="has"><code class="language-javascript">function Ninja(){   this.whoAmI = () =&gt; this; } var ninja1 = new Ninja(); var ninja2 = {   whoAmI: ninja1.whoAmI };  ninja1.whoAmI() === ninja1 //true ninja2.whoAmI() === ninja2 //false   //在箭头函数中this等于函数定义时的上下文 //在这个例子中this是指向ninja1 //所以ninja2.whoAmI() 还是指向ninja1  function Ninja(){   this.whoAmI = function(){     return this;   }.bind(this); } var ninja1 = new Ninja(); var ninja2 = {   whoAmI: ninja1.whoAmI };  ninja1.whoAmI() === ninja1  // true ninja2.whoAmI() === ninja2  //false  //在实例化ninja1的时候， ninja1.whoAmI中的this被绑定为ninja1 //所以不管怎样的方式调用ninja1.whoAmI都是指向 ninja1  //注：此例摘录自 《JavaSript忍者秘籍第2版》</code></pre> <pre class="has"><code class="language-javascript">    const obj = {       func1() {         return this === obj       },       func2: () =&gt; this === window     }     console.log(obj.func1()) //true     console.log(obj.func2()) //true </code></pre> <p>&nbsp;</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-80060.htm">1至2月幼猫喂养方法（刚出生的小猫怎么喂养）</a></p>
+                                        <p>下一个：<a href="/news/article-80740.htm">猫三联三针和两针的区别图片（猫三联三针一共多少钱）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-80059.htm" title="动物疫苗接种注意事项有哪些内容（动物疫苗注射工作注意事项）">动物疫苗接种注意事项有哪些内容（动物疫苗注射工作注意事项）</a></li>
+                        <li class="py-2"><a href="/news/article-78001.htm" title="宠物粮厂工作累不累呀（宠物食品招聘主粮厂长）">宠物粮厂工作累不累呀（宠物食品招聘主粮厂长）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-13-node-share.htm" title="Jump Jump VPN | 3月13日18.1M/S|免费Shadowrocket/SSR/V2ray/Clash免费节点订阅分享">Jump Jump VPN | 3月13日18.1M/S|免费Shadowrocket/SSR/V2ray/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-69966.htm" title="生产宠物粮的工厂有哪些岗位工作（生产宠物粮前景如何）">生产宠物粮的工厂有哪些岗位工作（生产宠物粮前景如何）</a></li>
+                        <li class="py-2"><a href="/news/article-70617.htm" title="Centos7部署RabbitMQ的镜像队列集群_在线工具">Centos7部署RabbitMQ的镜像队列集群_在线工具</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-24-free-node-subscribe-links.htm" title="Jump Jump VPN | 2月24日20.3M/S|免费SSR/V2ray/Shadowrocket/Clash免费节点订阅分享">Jump Jump VPN | 2月24日20.3M/S|免费SSR/V2ray/Shadowrocket/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-61885.htm" title="宠物粮食加工厂设备有哪些厂家的品牌呢（宠物粮食加工设备贵吗）">宠物粮食加工厂设备有哪些厂家的品牌呢（宠物粮食加工设备贵吗）</a></li>
+                        <li class="py-2"><a href="/news/article-71939.htm" title="中国兽药厂家排名前50强名单图片 中国兽药厂家排名前50强名单图片大全">中国兽药厂家排名前50强名单图片 中国兽药厂家排名前50强名单图片大全</a></li>
+                        <li class="py-2"><a href="/news/article-74593.htm" title="用python实现文件的词频统计">用python实现文件的词频统计</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-26-free-subscribe-node.htm" title="Jump Jump VPN | 2月26日18.9M/S|免费SSR/V2ray/Clash/Shadowrocket免费节点订阅分享">Jump Jump VPN | 2月26日18.9M/S|免费SSR/V2ray/Clash/Shadowrocket免费节点订阅分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">72</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Features Section -->
+    </main>
+        <footer id="footer" class="footer position-relative">
+        <div class="container copyright text-center mt-4">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>Jump Jump VPN 订阅机场节点中文站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Preloader -->
+    <div id="preloader"></div>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/surfboardgithub/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/swiper/swiper-bundle.min.js"></script>
+    <!-- Main JS File -->
+    <script src="/assets/website/js/frontend/surfboardgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
