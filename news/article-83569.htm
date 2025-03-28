@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://jumpjumpvpn.github.io/news/article-83569.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>pymysql 连接mysql（带参数变量）</title>
+        <meta name="description" content="查询3班女生的分数  import pymysql  gender="女"#性别 class_no=3#班级编号 db = pymysql.connect(host="localhost",user=" />
+        <link rel="icon" href="/assets/website/img/surfboardgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Jump Jump VPN 订阅机场节点中文站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jumpjumpvpn.github.io/news/article-83569.htm" />
+    <meta property="og:site_name" content="Jump Jump VPN 订阅机场节点中文站" />
+    <meta property="og:title" content="pymysql 连接mysql（带参数变量）" />
+    <meta property="og:image" content="https://jumpjumpvpn.github.io/uploads/20240806-1/5f7cf95b3f317c66596c34e5f4b4f574.webp" />
+        <meta property="og:release_date" content="2025-03-28T09:56:58" />
+    <meta property="og:updated_time" content="2025-03-28T09:56:58" />
+        <meta property="og:description" content="查询3班女生的分数  import pymysql  gender="女"#性别 class_no=3#班级编号 db = pymysql.connect(host="localhost",user=" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="pymysql 连接mysql（带参数变量）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+        
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/surfboardgithub/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="/assets/website/css/surfboardgithub/main.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9WTV4V4L86"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9WTV4V4L86');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body class="starter-page-page" data-page="detail">
+        <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+            <a href="/" class="logo d-flex align-items-center me-auto">
+                        <span class="sitename">Jump Jump VPN</span>
+                        </a>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                    </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+    <main class="main" style="margin-top: 6rem;">
+        <!-- Page Title -->
+        <div class="page-title" data-aos="fade">
+            <div class="container d-lg-flex justify-content-between align-items-center">
+                <h1 class="mb-2 mb-lg-0">pymysql 连接mysql（带参数变量）</h1>
+                <nav class="breadcrumbs">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li class="current">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div><!-- End Page Title -->
+
+        <section id="features" class="features section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <p>查询3班女生的分数</p> </h1> <pre class="has"><code class="language-python">import pymysql  gender="女"#性别 class_no=3#班级编号 db = pymysql.connect(host="localhost",user="root",password="123456",db="test",port=3306,use_unicode=True, charset="utf8")#打开数据库 #host：MySQL服务器地址 #user：用户名 #password：密码 #db：数据库名称 #port：MySQL服务器端口号 cur = db.cursor() cur.execute("select score from class_info where gender='%s' and class_no=%d" %(gender,class_no)) # 执行sql语句，gender为字符串，class_no为整型 scores = cur.fetchall()#scores为tuple类型     </code></pre> <p>如果对你有帮助，请点下赞，予人玫瑰手有余香！</p> <p>时时仰望天空，理想就会离现实越来越近！</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-82852.htm">动物疫苗接种禁忌症和注意事项图片视频 动物疫苗接种禁忌症和注意事项图片视频讲解</a></p>
+                                        <p>下一个：<a href="/news/article-83570.htm">宠物粮食加工厂设备有哪些厂家的呢 宠物粮食加工厂设备有哪些厂家的呢图片</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-15-free-node-subscribe.htm" title="Jump Jump VPN | 3月15日22.6M/S|免费V2ray/SSR/Shadowrocket/Clash免费节点订阅分享">Jump Jump VPN | 3月15日22.6M/S|免费V2ray/SSR/Shadowrocket/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-27-clash-v2ray-ss-ssr.htm" title="Jump Jump VPN | 3月27日18.1M/S|免费V2ray/SSR/Clash/Shadowrocket免费节点订阅分享">Jump Jump VPN | 3月27日18.1M/S|免费V2ray/SSR/Clash/Shadowrocket免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-80059.htm" title="动物疫苗接种注意事项有哪些内容（动物疫苗注射工作注意事项）">动物疫苗接种注意事项有哪些内容（动物疫苗注射工作注意事项）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-7-clash-v2ray-ss-ssr.htm" title="Jump Jump VPN | 3月7日19.9M/S|免费V2ray/SSR/Shadowrocket/Clash免费节点订阅分享">Jump Jump VPN | 3月7日19.9M/S|免费V2ray/SSR/Shadowrocket/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-72593.htm" title="动物诊所 英文 动物诊所英文">动物诊所 英文 动物诊所英文</a></li>
+                        <li class="py-2"><a href="/news/article-65517.htm" title="动物防疫工作计划书题目（动物防疫规划）">动物防疫工作计划书题目（动物防疫规划）</a></li>
+                        <li class="py-2"><a href="/news/article-75279.htm" title="什么是Python高阶函数">什么是Python高阶函数</a></li>
+                        <li class="py-2"><a href="/news/article-79372.htm" title="常州美多格宠物医院电话（常州美多格宠物医院怎么样）">常州美多格宠物医院电话（常州美多格宠物医院怎么样）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-3-node-share-links.htm" title="Jump Jump VPN | 3月3日21.7M/S|免费V2ray/Shadowrocket/Clash/SSR免费节点订阅分享">Jump Jump VPN | 3月3日21.7M/S|免费V2ray/Shadowrocket/Clash/SSR免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-63674.htm" title="58同城免费领养宠物可靠吗知乎（58同城免费领养宠物可靠吗知乎）">58同城免费领养宠物可靠吗知乎（58同城免费领养宠物可靠吗知乎）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Features Section -->
+    </main>
+        <footer id="footer" class="footer position-relative">
+        <div class="container copyright text-center mt-4">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>Jump Jump VPN 订阅机场节点中文站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Preloader -->
+    <div id="preloader"></div>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/surfboardgithub/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/swiper/swiper-bundle.min.js"></script>
+    <!-- Main JS File -->
+    <script src="/assets/website/js/frontend/surfboardgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
