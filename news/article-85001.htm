@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://jumpjumpvpn.github.io/news/article-85001.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Elasticsearch Mapping 中配置自定义Analyzer</title>
+        <meta name="description" content="多字段特性  默认text 类型会有一个keyword 字段类型  什么情况下使用多字段？  公司名字实现精确匹配 使用不同的Analyzer  不同语言 pinyin字段的搜索 还支持为搜索和索引指" />
+        <link rel="icon" href="/assets/website/img/surfboardgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Jump Jump VPN 订阅机场节点中文站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jumpjumpvpn.github.io/news/article-85001.htm" />
+    <meta property="og:site_name" content="Jump Jump VPN 订阅机场节点中文站" />
+    <meta property="og:title" content="Elasticsearch Mapping 中配置自定义Analyzer" />
+    <meta property="og:image" content="https://jumpjumpvpn.github.io/uploads/20240806-1/e89729c7f339a1e8cf3611a6e8320653.webp" />
+        <meta property="og:release_date" content="2025-03-30T09:37:04" />
+    <meta property="og:updated_time" content="2025-03-30T09:37:04" />
+        <meta property="og:description" content="多字段特性  默认text 类型会有一个keyword 字段类型  什么情况下使用多字段？  公司名字实现精确匹配 使用不同的Analyzer  不同语言 pinyin字段的搜索 还支持为搜索和索引指" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Elasticsearch Mapping 中配置自定义Analyzer">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+        
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/surfboardgithub/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="/assets/website/css/surfboardgithub/main.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9WTV4V4L86"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9WTV4V4L86');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body class="starter-page-page" data-page="detail">
+        <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+            <a href="/" class="logo d-flex align-items-center me-auto">
+                        <span class="sitename">Jump Jump VPN</span>
+                        </a>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                    </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+    <main class="main" style="margin-top: 6rem;">
+        <!-- Page Title -->
+        <div class="page-title" data-aos="fade">
+            <div class="container d-lg-flex justify-content-between align-items-center">
+                <h1 class="mb-2 mb-lg-0">Elasticsearch Mapping 中配置自定义Analyzer</h1>
+                <nav class="breadcrumbs">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li class="current">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div><!-- End Page Title -->
+
+        <section id="features" class="features section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h3>多字段特性</h3> <blockquote> <p>默认text 类型会有一个keyword 字段类型</p> </blockquote> <h3>什么情况下使用多字段？</h3> <ul> <li>公司名字实现精确匹配</li> <li>使用不同的Analyzer <ul> <li>不同语言</li> <li>pinyin字段的搜索</li> <li>还支持为搜索和索引指定不同的analyzer</li> </ul> </li> </ul> <h3>精确值和全文本</h3> <blockquote> <p>区别：精确值不需要做分词处理</p> </blockquote> <h3>自定义Analyzer 介绍</h3> <ul> <li>Character Filters</li> </ul> <blockquote> <p>在Tokenizer 之前对文本进行处理，例如增加删除及替换字符，可以配置多个Character Filters 。会影响TOkenizer 的position和offset 信息。</p> <p>一些自带的Character Filters</p> <p>HTML strip&nbsp; 去除html 标签</p> <p>Mapping 字符串替换</p> <p>Pattern replace 正则匹配替换</p> </blockquote> <p>示例</p> <pre><code class="language-bash">POST _analyze {   "tokenizer": "keyword",   "char_filter": ["html_strip"],   "text": "&lt;b&gt;hello world&lt;/b&gt;" }  // 使用char filter 进行替换 POST _analyze {   "tokenizer": "standard",   "char_filter": [     {       "type": "mapping",       "mappings": ["- =&gt; _"]     }   ],   "text": "123-456, I-test! test-990 650-555-1234" }  // 替换表情符号 POST _analyze {   "tokenizer": "standard",   "char_filter": [     {       "type": "mapping",       "mappings": [":) =&gt; happy", ":( =&gt; sad"]     }   ],   "text": "my today :) ,but :( !!!" } // 正则表达式 GET _analyze {   "tokenizer": "standard",   "char_filter": [     {       "type": "pattern_replace",       "pattern": "http://(.*)",       "replacement": "$1"     }   ],   "text": "http://www.baidu.com" }</code></pre> <h3> TOkenizer</h3> <blockquote> <p>将原始的文本按照一定的规则，切分为词(term or token)</p> <p>Elasticsearch 内置的Tokenizers</p> <p>whitespace / standard / uax_url_email /pattern /keyword/ path hierarchy</p> <p>可以用java 开发插件，实现自己的Tokenizer</p> </blockquote> <p>示例：</p> <pre><code class="language-bash">// 文件路径切分 POST _analyze {   "tokenizer": "path_hierarchy",   "text": "/usr/local/a/b/c/d/e" }</code></pre> <h3>Token Filters</h3> <blockquote> <p>将Tokenizer 输出的单词(term), 进行增加，修改，删除</p> <p>自带的Token Filters</p> <p>lowercase / stop / synonym （添加近义词）</p> </blockquote> <p>示例</p> <pre><code class="language-bash">// whitespace 与stop 以空格切分，并且去掉in  the on 介词 GET _analyze {   "tokenizer": "whitespace",   "filter": ["stop"],   "text": ["The rain in Spain falls mainly on the plain."] } // whitespace 加入lowercase 后，介词The 改为小写被删除   GET _analyze {   "tokenizer": "whitespace",   "filter": ["lowercase","stop"],   "text": ["The rain in Spain falls mainly on the plain."] }</code></pre> <p> 设置一个自定义Analyzer</p> <pre><code class="language-bash">// 创建索引指定分词器 PUT my_inx {   "settings": {     "analysis": {       "analyzer": {         "my_custom_analyzer": {           "type": "custom",           "char_filter": [             "emoticons"             ],             "tokenizer": "punctuation",             "filter": [               "lowercase",               "english_stop"               ]         }       },       "tokenizer": {         "punctuation": {           "type": "pattern",           "pattern": "[ .,!?]"         }       },       "char_filter": {         "emoticons": {           "type": "mapping",           "mappings": [             ":) =&gt; _happy_",             ":( =&gt; _sad_"             ]         }       },       "filter": {         "english_stop": {           "type": "stop",           "stopwords": "_englist_"         }       }     }   } }  POST my_inx/_analyze {   "analyzer": "my_custom_analyzer",   "text": "I'm a :) persion, and you?" }</code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-84286.htm">synchronized详解</a></p>
+                                        <p>下一个：<a href="/news/article-85002.htm">兽医资格证自考需要什么书（自考兽医执业资格证）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-63673.htm" title="在我的城市有一家宠物医院英语怎么说（在我的城市有一家宠物医院翻译）">在我的城市有一家宠物医院英语怎么说（在我的城市有一家宠物医院翻译）</a></li>
+                        <li class="py-2"><a href="/news/article-79372.htm" title="常州美多格宠物医院电话（常州美多格宠物医院怎么样）">常州美多格宠物医院电话（常州美多格宠物医院怎么样）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-24-free-node-subscribe-links.htm" title="Jump Jump VPN | 2月24日20.3M/S|免费SSR/V2ray/Shadowrocket/Clash免费节点订阅分享">Jump Jump VPN | 2月24日20.3M/S|免费SSR/V2ray/Shadowrocket/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-71274.htm" title="vue-cli4.5.13按需引入vant，解决vant样式失效问题">vue-cli4.5.13按需引入vant，解决vant样式失效问题</a></li>
+                        <li class="py-2"><a href="/news/article-66760.htm" title="佩洛西讲话（军情直播间）学到了，">佩洛西讲话（军情直播间）学到了，</a></li>
+                        <li class="py-2"><a href="/news/article-80060.htm" title="1至2月幼猫喂养方法（刚出生的小猫怎么喂养）">1至2月幼猫喂养方法（刚出生的小猫怎么喂养）</a></li>
+                        <li class="py-2"><a href="/news/article-66127.htm" title="动物疫苗生产企业排行榜前十名有哪些 动物疫苗生产企业排行榜前十名有哪些">动物疫苗生产企业排行榜前十名有哪些 动物疫苗生产企业排行榜前十名有哪些</a></li>
+                        <li class="py-2"><a href="/news/article-63077.htm" title="Shell基础变量定义的规则和分类详解">Shell基础变量定义的规则和分类详解</a></li>
+                        <li class="py-2"><a href="/news/article-78688.htm" title="猫咬之后多久打疫苗如果超过24小时（猫咬伤多久打疫苗）">猫咬之后多久打疫苗如果超过24小时（猫咬伤多久打疫苗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-25-free-v2ray-subscribe.htm" title="Jump Jump VPN | 2月25日18.8M/S|免费V2ray/Clash/Shadowrocket/SSR免费节点订阅分享">Jump Jump VPN | 2月25日18.8M/S|免费V2ray/Clash/Shadowrocket/SSR免费节点订阅分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Features Section -->
+    </main>
+        <footer id="footer" class="footer position-relative">
+        <div class="container copyright text-center mt-4">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+            <p>Jump Jump VPN 订阅机场节点中文站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Preloader -->
+    <div id="preloader"></div>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/surfboardgithub/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/swiper/swiper-bundle.min.js"></script>
+    <!-- Main JS File -->
+    <script src="/assets/website/js/frontend/surfboardgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
