@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://jumpjumpvpn.github.io/news/article-96057.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>java 获取泛型t的class Java泛型 | Jackson TypeReference获取泛型类型信息</title>
+        <meta name="description" content="前言 Jackson是一个比较流行的Json序列化和反序列化框架。本文以Jackson为例介绍TypeReference实现涉及泛型的反序列化，及TypeReference的实现原理。对于获取泛型类型" />
+        <link rel="icon" href="/assets/website/img/surfboardgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Jump Jump VPN 订阅机场节点中文站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jumpjumpvpn.github.io/news/article-96057.htm" />
+    <meta property="og:site_name" content="Jump Jump VPN 订阅机场节点中文站" />
+    <meta property="og:title" content="java 获取泛型t的class Java泛型 | Jackson TypeReference获取泛型类型信息" />
+    <meta property="og:image" content="https://jumpjumpvpn.github.io/uploads/20240806-1/3129f0eade134dd0f4a0ce4c0d41b884.webp" />
+        <meta property="og:release_date" content="2025-04-14T08:04:40" />
+    <meta property="og:updated_time" content="2025-04-14T08:04:40" />
+        <meta property="og:description" content="前言 Jackson是一个比较流行的Json序列化和反序列化框架。本文以Jackson为例介绍TypeReference实现涉及泛型的反序列化，及TypeReference的实现原理。对于获取泛型类型" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="java 获取泛型t的class Java泛型 | Jackson TypeReference获取泛型类型信息">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+        
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/surfboardgithub/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="/assets/website/css/surfboardgithub/main.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9WTV4V4L86"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9WTV4V4L86');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body class="starter-page-page" data-page="detail">
+        <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+            <a href="/" class="logo d-flex align-items-center me-auto">
+                        <span class="sitename">Jump Jump VPN</span>
+                        </a>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                    </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+    <main class="main" style="margin-top: 6rem;">
+        <!-- Page Title -->
+        <div class="page-title" data-aos="fade">
+            <div class="container d-lg-flex justify-content-between align-items-center">
+                <h1 class="mb-2 mb-lg-0">java 获取泛型t的class Java泛型 | Jackson TypeReference获取泛型类型信息</h1>
+                <nav class="breadcrumbs">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li class="current">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div><!-- End Page Title -->
+
+        <section id="features" class="features section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div> <h2>前言</h2> <p>Jackson是一个比较流行的Json序列化和反序列化框架。本文以Jackson为例介绍TypeReference实现涉及泛型的反序列化，及TypeReference的实现原理。对于获取泛型类型信息的场景，TypeReference是一个可以参考的通用解决方案。</p> <h2>实例</h2> <p>Jackson ObjectMapper的readValue可以将Json字符串反序列化为Java对象。如下例中将<code>[{"id":null,"name":" ","age":500,"gender":false,"email":"email","employed":true,"salary":10}]</code>反序列化为<code>List&lt;UserResource&gt;</code>类型。</p> <p>Json字符串：</p> <div class="has"> <pre class="has"><code>[{<!-- -->     "id": null,     "name": " ",     "age": 500,     "gender": false,     "email": "email",     "employed": true,     "salary": 10 }]</code></pre> </div> <p>UserResource实体类：</p> <div class="has"> <pre class="has"><code>@Builder @Data @NoArgsConstructor @AllArgsConstructor public class UserResource {<!-- -->     private UUID id;     private String name;     private int age;     private boolean gender;     private String email;     private boolean employed;     private BigDecimal salary; }</code></pre> </div> <h2>实现</h2> <h3>理想的实现方式</h3> <p>理想的实现方式是告诉<code>ObjectMapper</code>的<code>readValue</code>方法，我要的是<code>List&lt;UserResource&gt;</code>，帮我反序列化成这个类型。</p> <div class="has"> <pre class="has"><code>List&lt;UserResource&gt; list = new ObjectMapper().readValue(userResourcesStr, List&lt;UserResource&gt;.class);</code></pre> </div> <p>现实是编译器告诉你这不行，<code>Cannot select from parameterized type</code>. 也很好理解，Java编译器认为List是Class，而List则不是。</p> <h3>换一种方式实现</h3> <p>既然不能用<code>List&lt;UserResource&gt;.class</code>, 那如果我告诉<code>ObjectMapper</code>的<code>readValue</code>方法，我要的是<code>List</code>类型，但返回值类型是<code>List&lt;UserResource&gt;</code>, 会发生什么呢？</p> <div class="has"> <pre class="has"><code>List&lt;UserResource&gt; list = new ObjectMapper().readValue(userResourcesStr, List.class);</code></pre> </div> <p>这时候倒没有编译错误, 但是会有警告：<code>Unchecked assignment: 'java.util.List' to 'java.util.List&lt;UserResource&gt;'</code>, 显然ObjectMapper并不能反序列化为UserResource类型，而是LinkedHashMap类型。如下图所示：</p> <div style="text-align:center;"><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/22145bf61acfc647008d84718d9754c2.jpg" alt="java 获取泛型t的class Java泛型 | Jackson TypeReference获取泛型类型信息"></div> <h3>TypeReference的实现方式</h3> <p>ObjectMapper提供了<code>readValue(String content, TypeReference valueTypeRef)</code>接口，第二个参数为new一个<code>TypeReference</code>的子类实例：<code>new TypeReference&lt;List&lt;UserResource&gt;&gt;(){}</code>。泛型抽象类TypeReference用于通过子类获取完整的泛型类型信息。</p> <div class="has"> <pre class="has"><code>public &lt;T&gt; T readValue(String content, TypeReference valueTypeRef) List&lt;UserResource&gt; list = new ObjectMapper().readValue(userResourcesStr, new TypeReference&lt;List&lt;UserResource&gt;&gt;(){});</code></pre> </div> <div style="text-align:center;"><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/8c3360e3f89d6a1cd09536cf8c7882f5.jpg" alt="java 获取泛型t的class Java泛型 | Jackson TypeReference获取泛型类型信息"></div> <h2>TypeReference 实现原理</h2> <p>上例中<code>new TypeReference&lt;List&lt;UserResource&gt;&gt;(){}</code>子类的实例，<code>TypeReference</code>源码部分比较简单，主要逻辑是，通过<code>getClass().getGenericSuperclass()</code>获取父类中的参数化类型（ParameterizedType）：</p> <p>TypeReference主要源码：</p> <div class="has"> <pre class="has"><code>protected TypeReference()     {<!-- -->         Type superClass = getClass().getGenericSuperclass();         _type = ((ParameterizedType) superClass).getActualTypeArguments()[0];     }</code></pre> </div> <p>getGenericSuperclass返回一个Type类型的对象，代表实体（class, interface, primitive type or void）的直接父类，如果父类是参数化类型，则返回的Type对象可准确反映源代码中使用的实际type参数。</p> <p>Class的genericInfo：</p> <div style="text-align:center;"><img decoding="async" src="http://img.555519.xyz/uploads3/20220723/4aaf69888bb19558a70b742f982169ea.jpg" alt="java 获取泛型t的class Java泛型 | Jackson TypeReference获取泛型类型信息"></div> <h2>总结</h2> <ul> <li>Jackson ObjectMapper 提供了TypeReference支持对泛型对象的反序列化；</li> <li>对于获取泛型类型信息的场景，TypeReference是一个可以参考的通用解决方案。</li> </ul> </div> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-95306.htm">动物疫苗排名前十名有哪些 动物疫苗排名前十名有哪些品种</a></p>
+                                        <p>下一个：<a href="/news/article-96058.htm">宠物粮在哪里批发便宜又好呢知乎（宠物粮批发进货渠道）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-82851.htm" title="MySQL如何将没有定界符的数字和字符串解释为日期？">MySQL如何将没有定界符的数字和字符串解释为日期？</a></li>
+                        <li class="py-2"><a href="/news/article-87875.htm" title="宠物粮进货平台有哪些（宠物粮进货平台有哪些品牌）">宠物粮进货平台有哪些（宠物粮进货平台有哪些品牌）</a></li>
+                        <li class="py-2"><a href="/news/article-93038.htm" title="哪里有免费给狗狗打疫苗的地方梅河口市（梅河口市犬猫诊疗中心）">哪里有免费给狗狗打疫苗的地方梅河口市（梅河口市犬猫诊疗中心）</a></li>
+                        <li class="py-2"><a href="/news/article-94544.htm" title="开宠物店亏死了多少人啊知乎文章（开宠物店亏损多吗）">开宠物店亏死了多少人啊知乎文章（开宠物店亏损多吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-node-share.htm" title="Jump Jump VPN | 3月20日20.3M/S|免费Shadowrocket/SSR/Clash/V2ray免费节点订阅分享">Jump Jump VPN | 3月20日20.3M/S|免费Shadowrocket/SSR/Clash/V2ray免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-84286.htm" title="synchronized详解">synchronized详解</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-14-free-v2ray-subscribe.htm" title="Jump Jump VPN | 4月14日21.1M/S|免费Clash/Shadowrocket/V2ray/SSR免费节点订阅分享">Jump Jump VPN | 4月14日21.1M/S|免费Clash/Shadowrocket/V2ray/SSR免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-27-clash-v2ray-ss-ssr.htm" title="Jump Jump VPN | 3月27日18.1M/S|免费V2ray/SSR/Clash/Shadowrocket免费节点订阅分享">Jump Jump VPN | 3月27日18.1M/S|免费V2ray/SSR/Clash/Shadowrocket免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-79372.htm" title="常州美多格宠物医院电话（常州美多格宠物医院怎么样）">常州美多格宠物医院电话（常州美多格宠物医院怎么样）</a></li>
+                        <li class="py-2"><a href="/news/article-88603.htm" title="安泰宠物医院大门图片（泰安泰宠宠物食品）">安泰宠物医院大门图片（泰安泰宠宠物食品）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">42</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Features Section -->
+    </main>
+        <footer id="footer" class="footer position-relative">
+        <div class="container copyright text-center mt-4">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <p>Jump Jump VPN 订阅机场节点中文站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Preloader -->
+    <div id="preloader"></div>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/surfboardgithub/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/swiper/swiper-bundle.min.js"></script>
+    <!-- Main JS File -->
+    <script src="/assets/website/js/frontend/surfboardgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
