@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://jumpjumpvpn.github.io/news/article-110133.htm" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>K8S 中的pod 和 node 区别</title>
+        <meta name="description" content="初学K8S，对于node 和 pod，感到很迷茫，查询之后，记录如下： pod 在Kubernetes中，最小的管理元素不是一个个独立的容器，而是Pod,Pod是最小的，管理，创建，计划的最小单元. " />
+        <link rel="icon" href="/assets/website/img/surfboardgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Jump Jump VPN 订阅机场节点中文站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jumpjumpvpn.github.io/news/article-110133.htm" />
+    <meta property="og:site_name" content="Jump Jump VPN 订阅机场节点中文站" />
+    <meta property="og:title" content="K8S 中的pod 和 node 区别" />
+    <meta property="og:image" content="https://jumpjumpvpn.github.io/uploads/20240806-1/e89729c7f339a1e8cf3611a6e8320653.webp" />
+        <meta property="og:release_date" content="2025-05-02T09:25:00" />
+    <meta property="og:updated_time" content="2025-05-02T09:25:00" />
+        <meta property="og:description" content="初学K8S，对于node 和 pod，感到很迷茫，查询之后，记录如下： pod 在Kubernetes中，最小的管理元素不是一个个独立的容器，而是Pod,Pod是最小的，管理，创建，计划的最小单元. " />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="K8S 中的pod 和 node 区别">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+        
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="/assets/website/js/frontend/surfboardgithub/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/aos/aos.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/assets/website/js/frontend/surfboardgithub/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="/assets/website/css/surfboardgithub/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9WTV4V4L86"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9WTV4V4L86');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body class="starter-page-page" data-page="detail">
+        <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+            <a href="/" class="logo d-flex align-items-center me-auto">
+                        <span class="sitename">Jump Jump VPN</span>
+                        </a>
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                                        <li><a href="/">首页</a></li>
+                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                        <li><a href="/news/">新闻资讯</a></li>
+                                        <li><a href="/client.htm">客户端</a></li>
+                                    </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+    <main class="main" style="margin-top: 6rem;">
+        <!-- Page Title -->
+        <div class="page-title" data-aos="fade">
+            <div class="container d-lg-flex justify-content-between align-items-center">
+                <h1 class="mb-2 mb-lg-0">K8S 中的pod 和 node 区别</h1>
+                <nav class="breadcrumbs">
+                    <ol>
+                        <li><a href="/">首页</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li class="current">正文</li>
+                    </ol>
+                </nav>
+            </div>
+        </div><!-- End Page Title -->
+
+        <section id="features" class="features section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>初学K8S，对于node 和 pod，感到很迷茫，查询之后，记录如下：</p> <h2>pod</h2> <p>在Kubernetes中，最小的管理元素不是一个个独立的容器，而是Pod,Pod是最小的，管理，创建，计划的最小单元.</p> <p><img decoding="async" alt="" height="206" src="http://img.555519.xyz/uploads3/20220820/1538e7a610eeb11a0a0d648c5c778277.jpg"></p> <p>一个Pod（as ub a pod of whales or pea pod）相当于一个共享context的配置组，在同一个context下，应用可能还会有独立的cgroup隔离机制，一个Pod是一个容器环境下的“逻辑主机”，它可能包含一个或者多个紧密相连的应用，这些应用可能是在同一个物理主机或虚拟机上。</p> <p>Pod 的context可以理解成多个linux命名空间的联合</p> <ul> <li>PID 命名空间（同一个Pod中应用可以看到其它进程）</li> <li>网络 命名空间（同一个Pod的中的应用对相同的IP地址和端口有权限）</li> <li>IPC 命名空间（同一个Pod中的应用可以通过VPC或者POSIX进行通信）</li> <li>UTS 命名空间（同一个Pod中的应用共享一个主机名称）</li> </ul> <p>同一个Pod中的应用可以共享磁盘，磁盘是Pod级的，应用可以通过文件系统调用。</p> <p>查看pod 所属信息：</p> <pre><code>~&gt; kubectl get pod -o wide NAME    READY   STATUS    RESTARTS   AGE   IP           NODE    NOMINATED NODE   READINESS GATES test   1/1     Running    0          14d   192.168.X.X  worker   &lt;none&gt;           &lt;none&gt;</code></pre> <h2><strong>Node</strong></h2> <p>Node是Pod真正运行的主机，可以物理机，也可以是虚拟机。为了管理Pod，每个Node节点上至少要运行container runtime（比如docker或者rkt）、kubelet和kube-proxy服务。</p> <p><img fetchpriority="high" decoding="async" alt="" height="295" src="http://img.555519.xyz/uploads3/20220820/c95493efbe975f92309df2ea9676e03a.jpg"></p> <p>&nbsp;不像其他的资源（如Pod和Namespace），Node本质上不是Kubernetes来创建的，Kubernetes只是管理Node上的资源。虽然可以通过Manifest创建一个Node对象（如下json所示），但Kubernetes也只是去检查是否真的是有这么一个Node，如果检查失败，也不会往上调度Pod。</p> <p>每个Node都包括以下状态信息</p> <ul> <li>地址：包括hostname、外网IP和内网IP</li> <li>条件（Condition）：包括OutOfDisk、Ready、MemoryPressure和DiskPressure</li> <li>容量（Capacity）：Node上的可用资源，包括CPU、内存和Pod总数</li> <li>基本信息（Info）：包括内核版本、容器引擎版本、OS类型等</li> </ul> <p>&nbsp;如果node 被删除，所拥有的pod会自动分流到其他的node，但是存在特殊的无法被分流的pod</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-109299.htm">天津宠物领养中心官网地址 天津宠物领养中心官网地址查询</a></p>
+                                        <p>下一个：<a href="/news/article-110137.htm">北京宠爱国际动物医疗机构（北京宠爱国际医院怎么样）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-99722.htm" title="宠物粮食店铺名字大全图片 宠物粮食店铺名字大全图片及价格">宠物粮食店铺名字大全图片 宠物粮食店铺名字大全图片及价格</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-5-3-free-v2ray-subscribe.htm" title="Jump Jump VPN | 5月3日21.3M/S|免费V2ray/Shadowrocket/SSR/Clash免费节点订阅分享">Jump Jump VPN | 5月3日21.3M/S|免费V2ray/Shadowrocket/SSR/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-90818.htm" title="如果被野猫抓伤了只是流了一点点血会怎样?（被野猫抓出一点点血）">如果被野猫抓伤了只是流了一点点血会怎样?（被野猫抓出一点点血）</a></li>
+                        <li class="py-2"><a href="/news/article-109298.htm" title="python协程 &amp; asyncio &amp; 异步编程（一） 协程">python协程 &amp; asyncio &amp; 异步编程（一） 协程</a></li>
+                        <li class="py-2"><a href="/news/article-101881.htm" title="宠物之家官网（深圳宠物之家官网）">宠物之家官网（深圳宠物之家官网）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-19-free-v2ray-subscribe.htm" title="Jump Jump VPN | 4月19日20.4M/S|免费Shadowrocket/V2ray/SSR/Clash免费节点订阅分享">Jump Jump VPN | 4月19日20.4M/S|免费Shadowrocket/V2ray/SSR/Clash免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-104166.htm" title="济南宠物狗领养中心电话号码（济南宠物狗领养中心电话号码是多少）">济南宠物狗领养中心电话号码（济南宠物狗领养中心电话号码是多少）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-5-5-free-v2ray-subscribe.htm" title="Jump Jump VPN | 5月5日23M/S|免费Clash/Shadowrocket/SSR/V2ray免费节点订阅分享">Jump Jump VPN | 5月5日23M/S|免费Clash/Shadowrocket/SSR/V2ray免费节点订阅分享</a></li>
+                        <li class="py-2"><a href="/news/article-93790.htm" title="动物防疫疫苗种类有哪些品种的（动物疫苗种类及类型）">动物防疫疫苗种类有哪些品种的（动物疫苗种类及类型）</a></li>
+                        <li class="py-2"><a href="/news/article-92304.htm" title="上海宠物救助中心电话24小时嘉定（上海嘉定宠物救助站）">上海宠物救助中心电话24小时嘉定（上海嘉定宠物救助站）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section><!-- /Features Section -->
+    </main>
+        <footer id="footer" class="footer position-relative">
+        <div class="container copyright text-center mt-4">
+                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+            <p>Jump Jump VPN 订阅机场节点中文站 版权所有 Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Preloader -->
+    <div id="preloader"></div>
+    <!-- Vendor JS Files -->
+    <script src="/assets/website/js/frontend/surfboardgithub/jquery-1.9.1.min.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/php-email-form/validate.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/aos/aos.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/website/js/frontend/surfboardgithub/swiper/swiper-bundle.min.js"></script>
+    <!-- Main JS File -->
+    <script src="/assets/website/js/frontend/surfboardgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
