@@ -1,4 +1,4 @@
-# Jump Jump VPN | 7月1日20M/S|免费SSR/V2ray/Clash/Shadowrocket免费节点订阅分享  更新时间 2025-07-01 08:46:33
+# Jump Jump VPN | 7月9日22.5M/S|免费SSR/Clash/V2ray/Shadowrocket免费节点订阅分享  更新时间 2025-07-09 09:01:15
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://jumpjumpvpn.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://jumpjumpvpn.github.io/uploads/2025/07/0-20250701.yaml
-- https://jumpjumpvpn.github.io/uploads/2025/07/1-20250701.yaml
-- https://jumpjumpvpn.github.io/uploads/2025/07/2-20250701.yaml
-- https://jumpjumpvpn.github.io/uploads/2025/07/3-20250701.yaml
-- https://jumpjumpvpn.github.io/uploads/2025/07/4-20250701.yaml
+- https://jumpjumpvpn.github.io/uploads/2025/07/0-20250709.yaml
+- https://jumpjumpvpn.github.io/uploads/2025/07/1-20250709.yaml
+- https://jumpjumpvpn.github.io/uploads/2025/07/2-20250709.yaml
+- https://jumpjumpvpn.github.io/uploads/2025/07/3-20250709.yaml
+- https://jumpjumpvpn.github.io/uploads/2025/07/4-20250709.yaml
 
 ### V2ray订阅链接
 
-- https://jumpjumpvpn.github.io/uploads/2025/07/0-20250701.txt
-- https://jumpjumpvpn.github.io/uploads/2025/07/1-20250701.txt
-- https://jumpjumpvpn.github.io/uploads/2025/07/2-20250701.txt
-- https://jumpjumpvpn.github.io/uploads/2025/07/3-20250701.txt
-- https://jumpjumpvpn.github.io/uploads/2025/07/4-20250701.txt
+- https://jumpjumpvpn.github.io/uploads/2025/07/0-20250709.txt
+- https://jumpjumpvpn.github.io/uploads/2025/07/1-20250709.txt
+- https://jumpjumpvpn.github.io/uploads/2025/07/2-20250709.txt
+- https://jumpjumpvpn.github.io/uploads/2025/07/3-20250709.txt
+- https://jumpjumpvpn.github.io/uploads/2025/07/4-20250709.txt
 
 ### Sing-box订阅链接
 
-- https://jumpjumpvpn.github.io/uploads/2025/07/20250701.json
+- https://jumpjumpvpn.github.io/uploads/2025/07/20250709.json
 
 ## 更多clash节点订阅 ：
 
