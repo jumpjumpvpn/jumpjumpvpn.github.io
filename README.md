@@ -1,4 +1,4 @@
-# Jump Jump VPN - 10月22日20.6M/S|免费Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点节点推荐，V2rayC梯子购买推荐  更新时间 2025-10-22 10:15:56
+# Jump Jump VPN - 10月31日21.9M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点节点推荐，V2rayC梯子购买推荐  更新时间 2025-10-31 17:50:57
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://jumpjumpvpn.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://jumpjumpvpn.github.io/uploads/2025/10/0-20251022.yaml
-- https://jumpjumpvpn.github.io/uploads/2025/10/1-20251022.yaml
-- https://jumpjumpvpn.github.io/uploads/2025/10/2-20251022.yaml
-- https://jumpjumpvpn.github.io/uploads/2025/10/3-20251022.yaml
-- https://jumpjumpvpn.github.io/uploads/2025/10/4-20251022.yaml
+- https://jumpjumpvpn.github.io/uploads/2025/10/0-20251031.yaml
+- https://jumpjumpvpn.github.io/uploads/2025/10/1-20251031.yaml
+- https://jumpjumpvpn.github.io/uploads/2025/10/2-20251031.yaml
+- https://jumpjumpvpn.github.io/uploads/2025/10/3-20251031.yaml
+- https://jumpjumpvpn.github.io/uploads/2025/10/4-20251031.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://jumpjumpvpn.github.io/uploads/2025/10/0-20251022.txt
-- https://jumpjumpvpn.github.io/uploads/2025/10/1-20251022.txt
-- https://jumpjumpvpn.github.io/uploads/2025/10/2-20251022.txt
-- https://jumpjumpvpn.github.io/uploads/2025/10/3-20251022.txt
-- https://jumpjumpvpn.github.io/uploads/2025/10/4-20251022.txt
+- https://jumpjumpvpn.github.io/uploads/2025/10/0-20251031.txt
+- https://jumpjumpvpn.github.io/uploads/2025/10/1-20251031.txt
+- https://jumpjumpvpn.github.io/uploads/2025/10/2-20251031.txt
+- https://jumpjumpvpn.github.io/uploads/2025/10/3-20251031.txt
+- https://jumpjumpvpn.github.io/uploads/2025/10/4-20251031.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://jumpjumpvpn.github.io/uploads/2025/10/20251022.json
+- https://jumpjumpvpn.github.io/uploads/2025/10/20251031.json
 
 ## 更多Clash节点订阅 ：
 
