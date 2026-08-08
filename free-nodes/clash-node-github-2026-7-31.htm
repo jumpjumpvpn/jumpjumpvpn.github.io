@@ -284,14 +284,9 @@ V2ray确保传输安全，但文件内容本身质量不一，建议用户核实
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>在 Clash 中使用混合代理模式有什么好处？</h5></div>
+    <div class="panel-heading"><h5>Potatso Lite 在新版 iOS 上无法连接怎么办？</h5></div>
     <div class="panel-body">
-        Clash 的混合代理模式允许同时运行多个代理协议和端口监听，从而实现流量分流。它可以为不同的应用或域名设置不同的代理方式，提高灵活性与连接稳定性，非常适合多协议用户使用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 如何实现精确端口分流？</h5></div>
-    <div class="panel-body">
-        Sing-box 支持按端口匹配流量，将不同类型应用流量分配到指定节点。结合策略组，可提高访问速度和网络稳定性，实现精准分流和优化用户体验。<hr />    </div>
+        苹果系统更新后，Potatso Lite 可能需要重新授权 VPN 权限。请删除旧的 VPN 配置，重新安装并导入节点。若仍无法使用，可尝试更换网络模式或等待开发者更新兼容版本。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan 使用自签名证书会带来哪些问题？</h5></div>
@@ -299,9 +294,14 @@ V2ray确保传输安全，但文件内容本身质量不一，建议用户核实
         自签名证书无法被客户端默认信任，可能导致连接失败或需要手动安装证书。它也容易被中间人伪造识别，不利于长期生产环境安全部署，建议使用可信 CA 证书以获得更好兼容性与安全性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何判断节点是否支持 UDP 转发以便游戏加速？</h5></div>
+    <div class="panel-heading"><h5>Trojan 服务端出现 handshake timeout 如何处理？</h5></div>
     <div class="panel-body">
-        可通过客户端的协议与节点说明确认是否支持 UDP（例如支持 UDP Relay 或 TUN/TAP 模式）。也可实际用 UDP 测试工具或直接用目标游戏连接进行延迟/丢包测试以验证是否可用。<hr />    </div>
+        该错误通常由网络延迟或证书配置不一致导致。请检查服务器带宽是否充足、TLS 证书链完整，并确保客户端 SNI 与证书匹配。必要时更换节点或优化拥塞控制算法。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>在 Clash 中使用混合代理模式有什么好处？</h5></div>
+    <div class="panel-body">
+        Clash 的混合代理模式允许同时运行多个代理协议和端口监听，从而实现流量分流。它可以为不同的应用或域名设置不同的代理方式，提高灵活性与连接稳定性，非常适合多协议用户使用。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何在 Windows 上安装 Clash for Windows？</h5></div>
@@ -309,29 +309,29 @@ V2ray确保传输安全，但文件内容本身质量不一，建议用户核实
         在 Windows 上安装 Clash for Windows 十分简单。只需前往官方 GitHub 页面下载最新版安装包，运行安装程序后导入订阅链接或配置文件即可。安装完成后，用户可以通过图形化界面方便地切换节点、编辑规则和控制代理模式。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess AEAD 加密在高封锁环境的优势？</h5></div>
-    <div class="panel-body">
-        AEAD 加密可防止数据篡改和流量特征泄露，降低被检测风险。在高封锁网络中，保证节点可用性和连接稳定性，同时提升数据传输安全性，确保长期安全访问。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 在新版 iOS 上无法连接怎么办？</h5></div>
-    <div class="panel-body">
-        苹果系统更新后，Potatso Lite 可能需要重新授权 VPN 权限。请删除旧的 VPN 配置，重新安装并导入节点。若仍无法使用，可尝试更换网络模式或等待开发者更新兼容版本。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 的多路复用功能有哪些好处？</h5></div>
     <div class="panel-body">
         多路复用允许多个短连接共享同一 QUIC 通道，减少握手延迟和资源消耗。在高并发或频繁短连接场景下，能显著提升吞吐量和稳定性，尤其适合游戏或即时通讯应用。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 服务端出现 handshake timeout 如何处理？</h5></div>
-    <div class="panel-body">
-        该错误通常由网络延迟或证书配置不一致导致。请检查服务器带宽是否充足、TLS 证书链完整，并确保客户端 SNI 与证书匹配。必要时更换节点或优化拥塞控制算法。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Mihomo 支持节点分类管理吗？</h5></div>
     <div class="panel-body">
-        支持。用户可将节点按地区、用途或延迟分类，结合策略组和规则进行分流。这样可以快速选择最佳节点，提高访问效率并便于维护大量节点。    </div>
+        支持。用户可将节点按地区、用途或延迟分类，结合策略组和规则进行分流。这样可以快速选择最佳节点，提高访问效率并便于维护大量节点。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何判断节点是否支持 UDP 转发以便游戏加速？</h5></div>
+    <div class="panel-body">
+        可通过客户端的协议与节点说明确认是否支持 UDP（例如支持 UDP Relay 或 TUN/TAP 模式）。也可实际用 UDP 测试工具或直接用目标游戏连接进行延迟/丢包测试以验证是否可用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess AEAD 加密在高封锁环境的优势？</h5></div>
+    <div class="panel-body">
+        AEAD 加密可防止数据篡改和流量特征泄露，降低被检测风险。在高封锁网络中，保证节点可用性和连接稳定性，同时提升数据传输安全性，确保长期安全访问。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 如何实现精确端口分流？</h5></div>
+    <div class="panel-body">
+        Sing-box 支持按端口匹配流量，将不同类型应用流量分配到指定节点。结合策略组，可提高访问速度和网络稳定性，实现精准分流和优化用户体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -379,16 +379,16 @@ V2ray确保传输安全，但文件内容本身质量不一，建议用户核实
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-7-8-free-node-subscribe.htm" title="Jump Jump VPN - 7月8日18.8M/S|免费Singbox节点/Clash节点/SSR节点/Trojan节点/V2ray节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 7月8日18.8M/S|免费Singbox节点/Clash节点/SSR节点/Trojan节点/V2ray节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-20-clash-verge-rev-nodes.htm" title="Jump Jump VPN - 7月20日19.9M/S|免费Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 7月20日19.9M/S|免费Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-4-clash-node-daily-updates.htm" title="Jump Jump VPN - 7月4日18.9M/S|免费V2ray节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 7月4日18.9M/S|免费V2ray节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-24-clash-node-daily-updates.htm" title="Jump Jump VPN - 7月24日21.7M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点/V2ray节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 7月24日21.7M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/Clash节点/SSR节点/V2ray节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-node-github-2026-7-31.htm" title="Jump Jump VPN - 7月31日20.1M/S|免费Clash节点/V2ray节点/Singbox节点/Trojan节点/SSR节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 7月31日20.1M/S|免费Clash节点/V2ray节点/Singbox节点/Trojan节点/SSR节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-18-clash-verge-rev-node-share.htm" title="Jump Jump VPN - 6月18日21.7M/S|免费Trojan节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 6月18日21.7M/S|免费Trojan节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点/V2ray节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-22-clash-verge-rev-node-share.htm" title="Jump Jump VPN - 6月22日19.5M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 6月22日19.5M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-6-20-clash-node.htm" title="Jump Jump VPN - 6月20日22.6M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点/Trojan节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 6月20日22.6M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点/Trojan节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-11-node-share.htm" title="Jump Jump VPN - 7月11日19.4M/S|免费V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/SSR节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 7月11日19.4M/S|免费V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/SSR节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-17-clash-verge-rev-windows.htm" title="Jump Jump VPN - 7月17日22.3M/S|免费Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 7月17日22.3M/S|免费Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Trojan节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-1-clash-verge-rev-node.htm" title="Jump Jump VPN - 7月1日21.4M/S|免费Trojan节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 7月1日21.4M/S|免费Trojan节点/V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-26-clash-node-daily-updates.htm" title="Jump Jump VPN - 6月26日19.5M/S|免费Clash节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点/V2ray节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 6月26日19.5M/S|免费Clash节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点/V2ray节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-2-clash-node-daily-updates.htm" title="Jump Jump VPN - 8月2日20M/S|免费Clash节点/V2ray节点/Singbox节点/Trojan节点/SSR节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 8月2日20M/S|免费Clash节点/V2ray节点/Singbox节点/Trojan节点/SSR节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-5-clash-verge-rev-node.htm" title="Jump Jump VPN - 7月5日18.6M/S|免费SSR节点/Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点/Clash节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 7月5日18.6M/S|免费SSR节点/Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点/Clash节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-23-clash-node-github.htm" title="Jump Jump VPN - 6月23日20.7M/S|免费SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 6月23日20.7M/S|免费SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-13-clash-verge-rev-github.htm" title="Jump Jump VPN - 7月13日21.5M/S|免费Clash节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 7月13日21.5M/S|免费Clash节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-7-19-clash-verge-rev-github.htm" title="Jump Jump VPN - 7月19日19M/S|免费Clash节点/Singbox节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 7月19日19M/S|免费Clash节点/Singbox节点/SSR节点/V2ray节点/Trojan节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-v2ray-ss-ssr-2026-8-1.htm" title="Jump Jump VPN - 8月1日19.4M/S|免费V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 8月1日19.4M/S|免费V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-11-clash-node-github.htm" title="Jump Jump VPN - 6月11日19.9M/S|免费Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Trojan节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 6月11日19.9M/S|免费Singbox节点/Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Trojan节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-6-13-node-share.htm" title="Jump Jump VPN - 6月13日21.2M/S|免费Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点/V2ray节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 6月13日21.2M/S|免费Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点/V2ray节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -400,7 +400,7 @@ V2ray确保传输安全，但文件内容本身质量不一，建议用户核实
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">1</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">8</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">31</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
