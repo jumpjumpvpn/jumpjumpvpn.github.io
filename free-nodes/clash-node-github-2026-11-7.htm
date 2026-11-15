@@ -323,34 +323,9 @@ A4：你可以选择自建（需要服务器）、购买、或使用公益节点
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的混淆插件如何提高抗封锁能力？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 的自定义 outbound 功能有什么用？</h5></div>
     <div class="panel-body">
-        通过混淆插件可以模拟正常 HTTPS 或 HTTP 流量，隐藏真实通信特征。合理选择混淆方式，可有效避免 DPI 检测，提高节点可用性和连接稳定性，保证长期科学上网。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 是否支持多订阅源？</h5></div>
-    <div class="panel-body">
-        支持。用户可导入多个订阅 URL，每个订阅源独立管理。通过切换订阅源或合并策略组，可灵活管理节点，实现不同地区或用途的线路分配。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 如何实现延迟自动切换？</h5></div>
-    <div class="panel-body">
-        Clash 可以结合策略组和延迟检测功能，自动选择延迟最低的节点。保证网页、视频和游戏流量通过最优节点，提高访问速度和稳定性，减少掉线和卡顿。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Quantumult X 的“分流规则”如何管理？</h5></div>
-    <div class="panel-body">
-        Quantumult X 使用策略组管理分流规则。用户可将规则文件导入应用，通过“policy group”定义不同流量走向，实现国内直连、国外代理、广告拦截等功能的自动分配。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 精确端口分流如何提升游戏体验？</h5></div>
-    <div class="panel-body">
-        Sing-box 可按端口设置流量分流规则，将游戏流量分配到低延迟节点。结合策略组使用，可保证游戏连接稳定，减少延迟和掉线，提高流畅度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 的域名规则如何实现分流？</h5></div>
-    <div class="panel-body">
-        Sing-box 支持按域名匹配流量，将不同网站或应用流量分配到指定节点。结合策略组自动切换低延迟节点，可优化访问速度，保证网络稳定性并提高整体体验。<hr />    </div>
+        Sing-box 允许用户自定义多个 outbound 出口，并通过路由规则选择性输出。例如可让流媒体走特定节点，而其他网站使用备用节点，从而实现精准分流。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的混淆和协议组合如何选择？</h5></div>
@@ -363,14 +338,39 @@ A4：你可以选择自建（需要服务器）、购买、或使用公益节点
         减少 rule-provider 数量、关闭不必要的日志与统计、降低 DNS 轮询频率并禁用内置测速；若使用 TUN 模式，可改为代理模式减少内核负担。必要时升级到更高性能的设备或使用更轻量内核。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 协议是如何伪装流量的？</h5></div>
+    <div class="panel-heading"><h5>SSR 的混淆插件如何提高抗封锁能力？</h5></div>
     <div class="panel-body">
-        Trojan 利用 HTTPS 协议进行传输伪装，通过 TLS 加密实现高度隐蔽性。它让代理流量看起来与普通网站访问完全相同，从而难以被防火墙检测，是目前安全性较高的代理方案之一。<hr />    </div>
+        通过混淆插件可以模拟正常 HTTPS 或 HTTP 流量，隐藏真实通信特征。合理选择混淆方式，可有效避免 DPI 检测，提高节点可用性和连接稳定性，保证长期科学上网。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 的自定义 outbound 功能有什么用？</h5></div>
+    <div class="panel-heading"><h5>Clash 如何实现延迟自动切换？</h5></div>
     <div class="panel-body">
-        Sing-box 允许用户自定义多个 outbound 出口，并通过路由规则选择性输出。例如可让流媒体走特定节点，而其他网站使用备用节点，从而实现精准分流。    </div>
+        Clash 可以结合策略组和延迟检测功能，自动选择延迟最低的节点。保证网页、视频和游戏流量通过最优节点，提高访问速度和稳定性，减少掉线和卡顿。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 是否支持多订阅源？</h5></div>
+    <div class="panel-body">
+        支持。用户可导入多个订阅 URL，每个订阅源独立管理。通过切换订阅源或合并策略组，可灵活管理节点，实现不同地区或用途的线路分配。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 的域名规则如何实现分流？</h5></div>
+    <div class="panel-body">
+        Sing-box 支持按域名匹配流量，将不同网站或应用流量分配到指定节点。结合策略组自动切换低延迟节点，可优化访问速度，保证网络稳定性并提高整体体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 精确端口分流如何提升游戏体验？</h5></div>
+    <div class="panel-body">
+        Sing-box 可按端口设置流量分流规则，将游戏流量分配到低延迟节点。结合策略组使用，可保证游戏连接稳定，减少延迟和掉线，提高流畅度。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Quantumult X 的“分流规则”如何管理？</h5></div>
+    <div class="panel-body">
+        Quantumult X 使用策略组管理分流规则。用户可将规则文件导入应用，通过“policy group”定义不同流量走向，实现国内直连、国外代理、广告拦截等功能的自动分配。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Trojan 协议是如何伪装流量的？</h5></div>
+    <div class="panel-body">
+        Trojan 利用 HTTPS 协议进行传输伪装，通过 TLS 加密实现高度隐蔽性。它让代理流量看起来与普通网站访问完全相同，从而难以被防火墙检测，是目前安全性较高的代理方案之一。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -418,16 +418,16 @@ A4：你可以选择自建（需要服务器）、购买、或使用公益节点
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-github-2026-10-27.htm" title="Jump Jump VPN - 10月27日18.3M/S|免费Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Singbox节点/Clash节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 10月27日18.3M/S|免费Shadowrocket节点/V2ray节点/Trojan节点/SSR节点/Singbox节点/Clash节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-4-clash-node-daily-updates.htm" title="Jump Jump VPN - 9月4日20.7M/S|免费V2ray节点/Trojan节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 9月4日20.7M/S|免费V2ray节点/Trojan节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-24-clash-node.htm" title="Jump Jump VPN - 9月24日18.4M/S|免费Trojan节点/Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 9月24日18.4M/S|免费Trojan节点/Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-30-clash-verge-rev-nodes.htm" title="Jump Jump VPN - 9月30日21.1M/S|免费SSR节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 9月30日21.1M/S|免费SSR节点/Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-v2ray-ss-ssr-2026-9-13.htm" title="Jump Jump VPN - 9月13日21.7M/S|免费Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 9月13日21.7M/S|免费Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-node-2026-9-23.htm" title="Jump Jump VPN - 9月23日20.6M/S|免费Singbox节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 9月23日20.6M/S|免费Singbox节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-node-github-2026-9-7.htm" title="Jump Jump VPN - 9月7日20M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/Trojan节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 9月7日20M/S|免费SSR节点/Shadowrocket节点/V2ray节点/Singbox节点/Clash节点/Trojan节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-2026-9-29.htm" title="Jump Jump VPN - 9月29日23M/S|免费Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 9月29日23M/S|免费Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-node-2026-10-3.htm" title="Jump Jump VPN - 10月3日22.9M/S|免费Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/V2ray节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 10月3日22.9M/S|免费Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/V2ray节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-github-2026-10-15.htm" title="Jump Jump VPN - 10月15日20.3M/S|免费V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 10月15日20.3M/S|免费V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-8-clash-verge-rev-nodes.htm" title="Jump Jump VPN - 11月8日21.1M/S|免费Clash节点/Trojan节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 11月8日21.1M/S|免费Clash节点/Trojan节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-22-clash-node.htm" title="Jump Jump VPN - 10月22日22.6M/S|免费SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/Singbox节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 10月22日22.6M/S|免费SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Trojan节点/Singbox节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-verge-rev-windows-2026-10-11.htm" title="Jump Jump VPN - 10月11日18.1M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Singbox节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 10月11日18.1M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Singbox节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-16-clash-verge-rev-node-github.htm" title="Jump Jump VPN - 10月16日22.3M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点/V2ray节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 10月16日22.3M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点/V2ray节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-node-github-2026-11-13.htm" title="Jump Jump VPN - 11月13日19M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 11月13日19M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点/SSR节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-2-clash-stash-node.htm" title="Jump Jump VPN - 11月2日21.2M/S|免费Clash节点/Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点/SSR节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 11月2日21.2M/S|免费Clash节点/Singbox节点/Trojan节点/V2ray节点/Shadowrocket节点/SSR节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-14-clash-stash-node.htm" title="Jump Jump VPN - 11月14日18.2M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/SSR节点/Clash节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 11月14日18.2M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/SSR节点/Clash节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-10-clash-meta-github.htm" title="Jump Jump VPN - 11月10日20.9M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 11月10日20.9M/S|免费V2ray节点/Trojan节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-6-clash-node.htm" title="Jump Jump VPN - 11月6日21.6M/S|免费Trojan节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 11月6日21.6M/S|免费Trojan节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-stash-2026-10-13.htm" title="Jump Jump VPN - 10月13日19.2M/S|免费SSR节点/V2ray节点/Shadowrocket节点/Trojan节点/Clash节点/Singbox节点节点推荐，V2rayC梯子购买推荐">Jump Jump VPN - 10月13日19.2M/S|免费SSR节点/V2ray节点/Shadowrocket节点/Trojan节点/Clash节点/Singbox节点节点推荐，V2rayC梯子购买推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -439,13 +439,10 @@ A4：你可以选择自建（需要服务器）、购买、或使用公益节点
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">8</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                     </ul>
     </div>
